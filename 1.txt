@@ -1,0 +1,61 @@
+$ django-admin startproject mysite
+mysite/
+    manage.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        asgi.py
+        wsgi.py
+
+***Inside outer mysite***
+
+# run server --> only for dev!
+$ python manage.py runserver
+
+# change the server’s port
+$ python manage.py runserver 8080
+
+# change the server’s IP, pass it along with the port. For example, to listen on all available public IPs 
+$ python manage.py runserver 0:8000
+(0 is a shortcut for 0.0.0.0)
+
+
+*** A project can contain multiple apps. An app can be in multiple projects.
+
+
+#To create your app
+$ python manage.py startapp polls
+polls/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+
+
+**A view function, or view for short, is a Python function that takes a Web request and returns a Web response. This response can be the HTML contents of a Web page, or a redirect, or a 404 error, or an XML document, or an image . . . or anything, really
+polls/views.py --> write first view
+To call the view, we need to map it to a URL - and for this we need a URLconf
+#create a file called urls.py.
+polls/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    urls.py
+    views.py
+
+#point the root URLconf at the polls.urls module
+
+...\> py manage.py runserver 
+http://localhost:8000/polls/
+
+
+#path() function is passed four arguments, two required: route and view, and two optional: kwargs, and name
