@@ -1,0 +1,7 @@
+# A view is a “type” of Web page in your Django application that generally serves a specific function and has a specific template.
+    => common term for components and actions
+# Django will choose a view by examining the URL that’s requested (to be precise, the part of the URL after the domain name).
+# To get from a URL to a view, Django uses what are known as ‘URLconfs’. A URLconf maps URL patterns to views.
+
+# Add a few more views to polls/views.py --> these take an argument
+# Wire these new views into the polls.urls module by adding the following path() calls
