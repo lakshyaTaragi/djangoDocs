@@ -1,0 +1,43 @@
+# mysite/settings.py 
+    to use another database, change the following keys in the DATABASES 'default'
+        ENGINE, NAME
+    set TIME_ZONE to your time zone
+
+    Some of these applications(INSTALLED_APPS in settings.py) make use of at least one database table
+        $ python manage.py migrate
+        The migrate command looks at the INSTALLED_APPS setting and creates any necessary database tables according to the database settings in your mysite/settings.py
+
+
+# models – essentially, your database layout, with additional metadata.
+# polls/models.py --> two models: Question and Choice ( Python classes --> subclass django.db.models.Model, class variables = database field
+)
+
+# we need to tell our project that the polls app is installed.
+    mysite/settings.py -->  INSTALLED_APPS --> add dotted path 'polls.apps.PollsConfig'
+    $ python manage.py makemigrations 
+    Migrations are how Django stores changes to your models (and thus your database schema)
+    polls/migrations/0001_initial.py
+    $ python manage.py sqlmigrate polls 0001 --> takes migration names and returns their SQL
+
+
+# python manage.py check --> checks for any problems in your project without making migrations or touching the database
+
+$ python manage.py migrate --> to create those model tables in your database --> migrate command takes all the migrations that haven’t been applied
+
+==> Change your models (in models.py).
+    Run python manage.py makemigrations to create migrations for those changes
+    Run python manage.py migrate to apply those changes to the database. (separate commands to create and apply--> migrations are shippable)
+
+
+
+# free API Django gives you = database API
+    $ python manage.py shell
+    using this instead pf normal python shell --> it already includes django -->in the shell, explore the database API
+    It’s important to add __str__() methods to your models
+    For more information on model relations, see Accessing related objects. For more on how to use double underscores to perform field lookups via the API, see Field lookups. For full details on the database API, see our Database API reference.
+
+
+
+# Creating an admin user
+    $ python manage.py createsuperuser
+    we need to tell the admin that Question objects have an admin interface. To do this, edit the polls/admin.py.
