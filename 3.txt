@@ -5,3 +5,11 @@
 
 # Add a few more views to polls/views.py --> these take an argument
 # Wire these new views into the polls.urls module by adding the following path() calls
+ ( <int: part is a converter that determines what patterns should match this part of the URL path)
+
+# templates = Being a web framework, Django needs a convenient way to generate HTML dynamically. The most common approach relies on templates. A template contains the static parts of the desired HTML output as well as some special syntax describing how dynamic content will be inserted. 
+
+# polls/templates/polls/index.html = Because of how the app_directories template loader works 
+# loads the template called polls/index.html and passes it a context. The context is a dictionary mapping template variable names to Python objects.
+
+#render() --> we no longer need to import loader and HttpResponse (maybe keep this for other purposes)
