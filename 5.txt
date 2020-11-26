@@ -1,0 +1,5 @@
+TESTING --> where to get started = the next time you make a change
+
+# Running tests:
+ $ python manage.py test polls 
+    => creates a special database for the purpose of testing
