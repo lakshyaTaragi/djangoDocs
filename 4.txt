@@ -1,1 +1,4 @@
 # Cross Site Request Forgeries --> all POST forms that are targeted at internal URLs should use the {% csrf_token %} template tag
+# Always return an HttpResponseRedirect after successfully dealing with POST data. This prevents data from being posted twice if a user hits the Back button.
+# reverse() function --> helps avoid having to hardcode a URL in the view function
+# two voters voting at the same time --> race conditions -->  Avoiding race conditions using F()
