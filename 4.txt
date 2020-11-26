@@ -2,3 +2,15 @@
 # Always return an HttpResponseRedirect after successfully dealing with POST data. This prevents data from being posted twice if a user hits the Back button.
 # reverse() function --> helps avoid having to hardcode a URL in the view function
 # two voters voting at the same time --> race conditions -->  Avoiding race conditions using F()
+
+# getting data from the database according to a parameter passed in the URL, loading a template and returning the rendered template --> “generic views” system
+    => Convert the URLconf.
+    => Delete some of the old, unneeded views.
+    => Introduce new views based on Django’s generic views.
+
+    * generic view requires a model attribute
+    * DetialView requires pk form url => question_id to pk
+    * template_name to use our defined templates instead of default templates of that View
+    
+
+    
