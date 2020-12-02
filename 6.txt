@@ -1,0 +1,7 @@
+# django.contrib.staticfiles is for: it collects static files from each of your applications (and any other places you specify) into a single location that can easily be served in production
+# polls/static --> Django will look for static files there
+# polls/static/polls/style.css --> so that you can refer to this static file in Django as polls/style.css --> NAMESPACING
+
+# The {% static %} template tag generates the absolute URL of static files
+#  polls/static/polls/images/bgimage.png
+# use relative paths to link your static files between each other
