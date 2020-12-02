@@ -1,0 +1,5 @@
+# reordering the fields on the edit form
+# The first element of each tuple in fieldsets is the title of the fieldset
+# ChoiceInline class --> this tells Django: “Choice objects are edited on the Question admin page
+#  The {% and {{ tags are part of Django’s template language
+
