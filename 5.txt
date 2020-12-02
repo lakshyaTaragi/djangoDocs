@@ -8,4 +8,16 @@ TESTING --> where to get started = the next time you make a change
 >>> from django.test.utils import setup_test_environment
 >>> setup_test_environment()
 
-#  django.test.TestCase class provides some additional assertion methods. In these examples, we use assertContains() and assertQuerysetEqual().
+# django.test.TestCase class provides some additional assertion methods. In these examples, we use assertContains() and assertQuerysetEqual().
+# We ought to add a similar get_queryset method to ResultsView
+
+# our tests are growing out of control --> It doesn’t matter --> as we add more complex tests, sometimes many of our existing tests will fail --> telling us exactly which tests need to be amended to bring them up to date
+in testing redundancy is a good thing.
+
+
+
+* a separate TestClass for each model or view
+* a separate test method for each set of conditions you want to test
+* test method names that describe their function
+
+# you can use an “in-browser” framework such as Selenium to test the way your HTML actually renders in a browser --> Django includes LiveServerTestCase to facilitate integration with tools like Selenium
